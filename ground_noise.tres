@@ -1,0 +1,35 @@
+[gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://cwofjqowro4oa"]
+
+[ext_resource type="Shader" uid="uid://dirlpwrsy6go3" path="res://ground_noise.gdshader" id="1_ymcxf"]
+
+[sub_resource type="Gradient" id="Gradient_7mycd"]
+offsets = PackedFloat32Array(0.012711864, 1)
+colors = PackedColorArray(0.12217546, 0.06864166, 2.4065375e-08, 1, 0.22598395, 0.1440588, 4.813075e-08, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_272bh"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5vw27"]
+noise = SubResource("FastNoiseLite_272bh")
+color_ramp = SubResource("Gradient_7mycd")
+seamless = true
+
+[sub_resource type="Gradient" id="Gradient_kek77"]
+offsets = PackedFloat32Array(0.004237288, 1)
+colors = PackedColorArray(7.5354706e-07, 0.1548467, 0, 1, 0.08293886, 0.2017329, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4c57u"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_efxa6"]
+width = 1024
+height = 1024
+noise = SubResource("FastNoiseLite_4c57u")
+color_ramp = SubResource("Gradient_kek77")
+seamless = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ymcxf")
+shader_parameter/height_scale = 0.1
+shader_parameter/noise_texture_1 = SubResource("NoiseTexture2D_5vw27")
+shader_parameter/noise_texture_2 = SubResource("NoiseTexture2D_efxa6")

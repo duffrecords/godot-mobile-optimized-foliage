@@ -1,0 +1,96 @@
+[gd_scene load_steps=11 format=3 uid="uid://7hpronyp44ju"]
+
+[ext_resource type="Material" uid="uid://cwofjqowro4oa" path="res://ground_noise.tres" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bhwjn0dik6e47" path="res://yew_shrub.tscn" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://b4jva24d1i6g8" path="res://player.gd" id="9_kek77"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
+
+[sub_resource type="Sky" id="Sky_h2yge"]
+sky_material = SubResource("ProceduralSkyMaterial_0xm2m")
+
+[sub_resource type="Environment" id="Environment_1bvp3"]
+background_mode = 2
+sky = SubResource("Sky_h2yge")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lquwl"]
+lightmap_size_hint = Vector2i(52, 52)
+material = ExtResource("2_1bvp3")
+add_uv2 = true
+size = Vector2(10, 10)
+subdivide_width = 50
+subdivide_depth = 50
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2yge"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1bvp3"]
+height = 1.7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lquwl"]
+size = Vector3(1, 4, 10)
+
+[node name="Main" type="Node3D"]
+
+[node name="sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.887727, -2.0123425e-08, 0.46037024, -0.46037024, -3.880378e-08, 0.887727, 0, -1, -4.371139e-08, 0, 3, 0)
+light_bake_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1bvp3")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+layers = 2
+mesh = SubResource("PlaneMesh_lquwl")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_h2yge")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+script = ExtResource("9_kek77")
+turn_speed = 0.1
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.8879599, 0.45992085, 0, -0.45992085, 0.8879599, 0, 1.7, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_1bvp3")
+
+[node name="yew_shrub" parent="." instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27520323, 0, -2.1618981)
+
+[node name="yew_shrub2" parent="." instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9972308, -2.3841858e-07, -2.042499)
+
+[node name="yew_shrub3" parent="." instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6821612, -2.3841858e-07, -2.075116)
+
+[node name="yew_shrub4" parent="." instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2251024, -2.3841858e-07, -0.6170801)
+
+[node name="yew_shrub5" parent="." instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7030163, -2.3841858e-07, -0.57281053)
+
+[node name="Boundaries" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+shape = SubResource("BoxShape3D_lquwl")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Boundaries"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+shape = SubResource("BoxShape3D_lquwl")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Boundaries"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -5)
+shape = SubResource("BoxShape3D_lquwl")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Boundaries"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 5)
+shape = SubResource("BoxShape3D_lquwl")
