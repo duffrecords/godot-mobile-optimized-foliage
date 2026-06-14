@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ofkssw7g80nn"]
+
+[ext_resource type="Shader" uid="uid://u61og54afj14" path="res://addons/mobile_optimized_foliage/foliage_shadow.gdshader" id="1_fuh3k"]
+[ext_resource type="Texture2D" uid="uid://chyn526aa7rvx" path="res://textures/yew_twig_albedo.png" id="2_gn83g"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_fuh3k")
+shader_parameter/albedo_texture = ExtResource("2_gn83g")
+shader_parameter/alpha_scissor_threshold = 0.4
+shader_parameter/alpha_antialiasing_edge = 0.15
+shader_parameter/stem_base_y = 0.0
+shader_parameter/stem_tip_y = 0.2
+shader_parameter/ao_affect = 0.9
+shader_parameter/lod_switch_distance = 5.0
+shader_parameter/lod_fade_range = 2.0

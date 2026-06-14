@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxklnq7ryasc2"
-path.s3tc="res://.godot/imported/yew_twig_orm.png-01103c0c9a19c0b005f7b09d6ea1812d.s3tc.ctex"
+uid="uid://ipdsiqswj3kk"
+path.s3tc="res://.godot/imported/main_BakedFoliage_impostor_atlas.png-c2d92a394f2ae11e00b94f49e48cf5fd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/yew_twig_orm.png"
-dest_files=["res://.godot/imported/yew_twig_orm.png-01103c0c9a19c0b005f7b09d6ea1812d.s3tc.ctex"]
+source_file="res://main_BakedFoliage_impostor_atlas.png"
+dest_files=["res://.godot/imported/main_BakedFoliage_impostor_atlas.png-c2d92a394f2ae11e00b94f49e48cf5fd.s3tc.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://cwofjqowro4oa"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cwofjqowro4oa"]
 
 [ext_resource type="Shader" uid="uid://dirlpwrsy6go3" path="res://ground_noise.gdshader" id="1_ymcxf"]
 

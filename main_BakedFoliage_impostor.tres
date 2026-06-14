@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FoliageImpostorData" format=3 uid="uid://dcdrar7rsfsjk"]
+
+[ext_resource type="Script" uid="uid://74xj413qdnla" path="res://addons/mobile_optimized_foliage/foliage_impostor_data.gd" id="1_ergm5"]
+[ext_resource type="Texture2D" uid="uid://ipdsiqswj3kk" path="res://main_BakedFoliage_impostor_atlas.png" id="2_01njm"]
+
+[resource]
+script = ExtResource("1_ergm5")
+texture = ExtResource("2_01njm")
+width = 1.78
+height = 1.78

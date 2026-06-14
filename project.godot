@@ -24,6 +24,10 @@ config/icon="res://icon.svg"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/mobile_optimized_foliage/plugin.cfg")
+
 [input]
 
 wasd_forward={
@@ -50,3 +54,4 @@ wasd_right={
 [rendering]
 
 renderer/rendering_method="mobile"
+anti_aliasing/quality/msaa_3d=1
